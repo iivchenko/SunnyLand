@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace UnityStandardAssets._2D
+namespace SunnyLand
 {
     public class PlatformerCharacter2D : MonoBehaviour
     {
@@ -18,7 +17,7 @@ namespace UnityStandardAssets._2D
         const float k_CeilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
         private Animator m_Anim;            // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
-        private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+        public bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
         private void Awake()
         {
@@ -28,7 +27,6 @@ namespace UnityStandardAssets._2D
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
         }
-
 
         private void FixedUpdate()
         {
@@ -99,8 +97,7 @@ namespace UnityStandardAssets._2D
             }
         }
 
-
-        private void Flip()
+        public void Flip()
         {
             // Switch the way the player is labelled as facing.
             m_FacingRight = !m_FacingRight;
@@ -109,6 +106,14 @@ namespace UnityStandardAssets._2D
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
+        }
+
+        public bool IsGrounded
+        {
+            get
+            {
+                return m_Grounded;
+            }
         }
     }
 }
