@@ -73,12 +73,9 @@ public class FrogAIController : MonoBehaviour
 
     private class ThinkState : State<FrogAIController>
     {
-        private readonly Random _random;
-
         public ThinkState(FrogAIController owner)
            : base(owner)
         {
-            _random = new Random();
         }
 
         public override void Update()

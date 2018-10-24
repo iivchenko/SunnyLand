@@ -11,8 +11,10 @@ namespace SunnyLand
         [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
 
         private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
+        private Transform _frontCheck;
         const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
         private bool m_Grounded;            // Whether or not the player is grounded.
+        private bool _frontBlocked;
         private Transform m_CeilingCheck;   // A position marking where to check for ceilings
         const float k_CeilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
         private Animator m_Anim;            // Reference to the player's animator component.
@@ -23,6 +25,7 @@ namespace SunnyLand
         {
             // Setting up references.
             m_GroundCheck = transform.Find("GroundCheck");
+            _frontCheck = transform.Find("FrontCheck");
             m_CeilingCheck = transform.Find("CeilingCheck");
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -31,6 +34,7 @@ namespace SunnyLand
         private void FixedUpdate()
         {
             m_Grounded = false;
+            _frontBlocked = false;
 
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
             // This can be done using layers instead but Sample Assets will not overwrite your project settings.
@@ -39,6 +43,13 @@ namespace SunnyLand
             {
                 if (colliders[i].gameObject != gameObject)
                     m_Grounded = true;
+            }
+
+            Collider2D[] colliders2 = Physics2D.OverlapCircleAll(_frontCheck.position, k_GroundedRadius, m_WhatIsGround);
+            for (int i = 0; i < colliders2.Length; i++)
+            {
+                if (colliders2[i].gameObject != gameObject)
+                    _frontBlocked = true;
             }
             m_Anim.SetBool("Ground", m_Grounded);
 
@@ -113,6 +124,14 @@ namespace SunnyLand
             get
             {
                 return m_Grounded;
+            }
+        }
+
+        public bool IsFrontBlocked
+        {
+            get
+            {
+                return _frontBlocked;
             }
         }
     }
