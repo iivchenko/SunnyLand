@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 95824209272497130}
   - component: {fileID: 58920916414385738}
   - component: {fileID: 114514169752067384}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1359626022976188}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.07, y: -0.35, z: 0.14245844}
+  m_LocalPosition: {x: 13.911823, y: -3.576806, z: -0.241813}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
