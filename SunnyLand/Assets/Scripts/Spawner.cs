@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public sealed class Spawner : MonoBehaviour
 {
