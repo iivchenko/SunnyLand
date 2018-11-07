@@ -411,6 +411,21 @@ Prefab:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1133971277}
+    - target: {fileID: 114338682103014550, guid: fc5e7dbee5e93a443be8639bd805980b,
+        type: 2}
+      propertyPath: DoorReached.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 629045147}
+    - target: {fileID: 114338682103014550, guid: fc5e7dbee5e93a443be8639bd805980b,
+        type: 2}
+      propertyPath: DoorReached.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitDoorReachedEventHandler
+      objectReference: {fileID: 0}
+    - target: {fileID: 114338682103014550, guid: fc5e7dbee5e93a443be8639bd805980b,
+        type: 2}
+      propertyPath: DoorReached.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc5e7dbee5e93a443be8639bd805980b, type: 2}
   m_IsPrefabAsset: 0
@@ -984,6 +999,10 @@ Prefab:
       propertyPath: OnCollected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 469391110}
+    - target: {fileID: 1097741237169736, guid: a1e831846e6c6b1489b812db948ce609, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1e831846e6c6b1489b812db948ce609, type: 2}
   m_IsPrefabAsset: 0
@@ -1097,13 +1116,41 @@ GameObject:
   m_Component:
   - component: {fileID: 540206081}
   - component: {fileID: 540206080}
+  - component: {fileID: 540206079}
   m_Layer: 0
   m_Name: KillZone
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &540206079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 540206078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0165dc6b180f6b442981f45791025ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KillZoneReached:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 629045147}
+        m_MethodName: KillzoneReachedEventHandler
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: KillZoneReached, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!61 &540206080
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1113,7 +1160,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 1.4086571, y: 0}
@@ -1169,6 +1216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718fe7a7b9d6ade44bc18e2b35dc458d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nextScene: Level 3
 --- !u!4 &629045148
 Transform:
   m_ObjectHideFlags: 0
