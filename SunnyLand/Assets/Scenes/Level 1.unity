@@ -914,6 +914,7 @@ GameObject:
   m_Component:
   - component: {fileID: 629045148}
   - component: {fileID: 629045147}
+  - component: {fileID: 629045149}
   m_Layer: 0
   m_Name: LevelSystem
   m_TagString: Untagged
@@ -946,6 +947,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &629045149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 629045146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 684aaa9adb13a164e93ab15bd6ce6060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actors:
+  - Player
 --- !u!4 &644677453 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4090314095787174, guid: 6607429dddfc31240a879b0f8bf3d53f,
@@ -1081,9 +1095,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114338682103014550, guid: fc5e7dbee5e93a443be8639bd805980b,
+    - target: {fileID: 114593135285035308, guid: fc5e7dbee5e93a443be8639bd805980b,
         type: 2}
       propertyPath: _actors.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114593135285035308, guid: fc5e7dbee5e93a443be8639bd805980b,
+        type: 2}
+      propertyPath: TriggerEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4286790461769454, guid: fc5e7dbee5e93a443be8639bd805980b, type: 2}
@@ -1118,25 +1137,49 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 114338682103014550, guid: fc5e7dbee5e93a443be8639bd805980b,
+    - target: {fileID: 114593135285035308, guid: fc5e7dbee5e93a443be8639bd805980b,
         type: 2}
-      propertyPath: DoorReached.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: TriggerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 629045147}
-    - target: {fileID: 114338682103014550, guid: fc5e7dbee5e93a443be8639bd805980b,
-        type: 2}
-      propertyPath: DoorReached.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ExitDoorReachedEventHandler
+      objectReference: {fileID: 629045149}
+    - target: {fileID: 1151714007826348, guid: fc5e7dbee5e93a443be8639bd805980b, type: 2}
+      propertyPath: m_Name
+      value: Exit
       objectReference: {fileID: 0}
-    - target: {fileID: 114338682103014550, guid: fc5e7dbee5e93a443be8639bd805980b,
+    - target: {fileID: 114593135285035308, guid: fc5e7dbee5e93a443be8639bd805980b,
         type: 2}
-      propertyPath: DoorReached.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      propertyPath: TriggerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Handle
+      objectReference: {fileID: 0}
+    - target: {fileID: 114593135285035308, guid: fc5e7dbee5e93a443be8639bd805980b,
+        type: 2}
+      propertyPath: TriggerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114338682103014550, guid: fc5e7dbee5e93a443be8639bd805980b,
+    - target: {fileID: 114593135285035308, guid: fc5e7dbee5e93a443be8639bd805980b,
+        type: 2}
+      propertyPath: TriggerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114593135285035308, guid: fc5e7dbee5e93a443be8639bd805980b,
+        type: 2}
+      propertyPath: TriggerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114593135285035308, guid: fc5e7dbee5e93a443be8639bd805980b,
         type: 2}
       propertyPath: _actors.Array.data[0]
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 114330589849242034, guid: fc5e7dbee5e93a443be8639bd805980b,
+        type: 2}
+      propertyPath: TriggerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 629045149}
+    - target: {fileID: 114330589849242034, guid: fc5e7dbee5e93a443be8639bd805980b,
+        type: 2}
+      propertyPath: TriggerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Handle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc5e7dbee5e93a443be8639bd805980b, type: 2}
@@ -1183,7 +1226,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 853356264}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 06064a6cfb8d9af418f1e83b7dabdd23, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
