@@ -11,8 +11,8 @@ public class UpdateScore : MonoBehaviour
         _text = GetComponent<Text>();
     }
 
-    public void UpdateText(int score)
+    public void UpdateText(string text)
     {
-        _text.text = string.Format("Score: {0}", score);
+        _text.text = text;
     }
 }

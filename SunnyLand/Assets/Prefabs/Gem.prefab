@@ -22,10 +22,10 @@ GameObject:
   - component: {fileID: 212765013468794024}
   - component: {fileID: 95824209272497130}
   - component: {fileID: 58920916414385738}
-  - component: {fileID: 114514169752067384}
+  - component: {fileID: 114778904436496650}
   m_Layer: 10
   m_Name: Gem
-  m_TagString: Untagged
+  m_TagString: Gem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1359626022976188}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.911823, y: -3.576806, z: -0.241813}
+  m_LocalPosition: {x: 13.936, y: -3.833, z: -0.241813}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114514169752067384
+--- !u!114 &114778904436496650
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,11 +84,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1359626022976188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60f2ee797cbfd1c4f908e6aa59971202, type: 3}
+  m_Script: {fileID: 11500000, guid: 3dd7123bdc9c62049b27b176b938a8ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collectableBy: Player
-  _scores: 100
+  _actors:
+  - Player
+  TriggerEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: Handle
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: TriggerEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!212 &212765013468794024
 SpriteRenderer:
   m_ObjectHideFlags: 1

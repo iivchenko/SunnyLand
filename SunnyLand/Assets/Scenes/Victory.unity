@@ -764,7 +764,10 @@ Prefab:
       propertyPath: OnHurt.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Reset
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114405638300721572, guid: a1e831846e6c6b1489b812db948ce609, type: 2}
+    - {fileID: 114406074410832644, guid: a1e831846e6c6b1489b812db948ce609, type: 2}
+    - {fileID: 114049024480671174, guid: a1e831846e6c6b1489b812db948ce609, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a1e831846e6c6b1489b812db948ce609, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &619228172
@@ -6646,66 +6649,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4968126684562386, guid: a1e831846e6c6b1489b812db948ce609,
     type: 2}
   m_PrefabInternal: {fileID: 507846538}
---- !u!1 &1133971277 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1097741237169736, guid: a1e831846e6c6b1489b812db948ce609,
-    type: 2}
-  m_PrefabInternal: {fileID: 507846538}
---- !u!114 &1133971278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1133971277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e38666460ef81945bd15f72f1f6e19f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyTag: Enemy
-  OnHurt:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Reset
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &1133971279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1133971277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf911700b6e4f4745a679b622e9cd2b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnCollected:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: UpdateText
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: ItemCollectedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!1 &1462208625
 GameObject:
   m_ObjectHideFlags: 0

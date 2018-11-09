@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Gem
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,9 @@ TagManager:
     locked: 1
   - name: Background_Middle
     uniqueID: 2112135431
+    locked: 0
+  - name: Background_Near
+    uniqueID: 571111527
     locked: 0
   - name: Default
     uniqueID: 0
