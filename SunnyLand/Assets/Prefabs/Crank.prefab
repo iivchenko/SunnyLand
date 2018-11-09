@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 61354067157244622}
   - component: {fileID: 212395534642541528}
   - component: {fileID: 114436074683845080}
+  - component: {fileID: 114878534338848504}
   m_Layer: 0
   m_Name: Crank
   m_TagString: Untagged
@@ -78,15 +79,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9eeb53c5a50d9b4abd6c382c33c12d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actors: []
+  _actors:
+  - Player
   _state: 0
   _upSprite: {fileID: 21300000, guid: 441a2d89600064d4d9ced045b19d0ae6, type: 3}
   _downSprite: {fileID: 21300000, guid: d3240c946631a4966b1bcab3db999126, type: 3}
-  CrankTriggered:
+--- !u!114 &114878534338848504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1026296001989742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dd7123bdc9c62049b27b176b938a8ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actors: []
+  TriggerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: CrankTriggered, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: TriggerEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!212 &212395534642541528
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -1,28 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
 
 public enum CrankState
 {
     Up,
     Down
-}
-
-public class CrankTriggeredEventArgs
-{
-    public CrankTriggeredEventArgs(CrankState state)
-    {
-        State = state;
-    }
-
-    public CrankState State { get; private set; }
-}
-
-[Serializable]
-public class CrankTriggered : UnityEvent<CrankTriggeredEventArgs>
-{
 }
 
 [RequireComponent(typeof(SpriteRenderer))]
@@ -32,8 +15,6 @@ public class Crank : MonoBehaviour
     public CrankState _state;
     public Sprite _upSprite;
     public Sprite _downSprite;
-
-    public CrankTriggered CrankTriggered;
 
     private SpriteRenderer _renderer;
     private List<GameObject> _colliders;
@@ -63,11 +44,6 @@ public class Crank : MonoBehaviour
         {
             RevertState();
             UpdateSprite();
-
-            if (CrankTriggered != null)
-            {
-                CrankTriggered.Invoke(new CrankTriggeredEventArgs(_state));
-            }
         }
     }
 
