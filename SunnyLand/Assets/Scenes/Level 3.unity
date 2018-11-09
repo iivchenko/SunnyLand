@@ -1455,7 +1455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718fe7a7b9d6ade44bc18e2b35dc458d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextScene: Level 4
+  _nextScene: Victory
 --- !u!4 &629045148
 Transform:
   m_ObjectHideFlags: 0
