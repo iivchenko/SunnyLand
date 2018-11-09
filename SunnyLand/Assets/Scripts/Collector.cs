@@ -13,8 +13,6 @@ public class Collector : MonoBehaviour
 
     public int Scores { get; private set; }
 
-   
-
     public void Awake()
     {
         _colliders = new List<GameObject>();
@@ -35,10 +33,7 @@ public class Collector : MonoBehaviour
         if (item != null)
         {
             Scores += item._scores;
-            if (OnCollected != null)
-            {
-                OnCollected.Invoke(Scores);
-            }
+            OnCollected.Invoke(Scores);
         }
     }
 
