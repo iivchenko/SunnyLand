@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace SunnyLand
 {
+    [RequireComponent(typeof(AudioSource))]
     public class PlatformerCharacter2D : MonoBehaviour
     {
         [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
@@ -21,6 +22,10 @@ namespace SunnyLand
         private Rigidbody2D m_Rigidbody2D;
         public bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
+        public AudioClip _jumpAudio;
+        public AudioClip _walkAudio;
+        private AudioSource _sound;
+
         private void Awake()
         {
             // Setting up references.
@@ -29,6 +34,7 @@ namespace SunnyLand
             m_CeilingCheck = transform.Find("CeilingCheck");
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
+            _sound = GetComponent<AudioSource>();
         }
 
         private void FixedUpdate()
@@ -97,6 +103,14 @@ namespace SunnyLand
                     // ... flip the player.
                     Flip();
                 }
+
+                if(move != 0 && m_Grounded && !_sound.isPlaying)
+                {
+                    if (_walkAudio != null)
+                    {
+                        _sound.PlayOneShot(_walkAudio);
+                    }
+                }                
             }
             // If the player should jump...
             if (m_Grounded && jump && m_Anim.GetBool("Ground"))
@@ -104,6 +118,11 @@ namespace SunnyLand
                 // Add a vertical force to the player.
                 m_Grounded = false;
                 m_Anim.SetBool("Ground", false);
+                if (_jumpAudio != null)
+                {
+                    _sound.PlayOneShot(_jumpAudio);
+                }
+
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
         }

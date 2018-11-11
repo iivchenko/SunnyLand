@@ -22,7 +22,5 @@ public class GemCounter : TriggerHandler
     {        
         _collected++;
        _score.UpdateText(_collected + "/" + _total);
-
-        Destroy(args.Trigger);
     }
 }
